@@ -1,0 +1,40 @@
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+
+# User/editor local config
+.vscode/
+
+# Python cache/bytecode
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Runtime logs
+*.log
+DWDMAgent/logs/
+
+# Generated reports and sample outputs
+DWDMAgent/reports/**
+DWDMAgent/sample_output/**
+
+# Keep empty folders if needed
+!DWDMAgent/reports/.gitkeep
+!DWDMAgent/sample_output/.gitkeep
+
+# Docs are private for now
+*.md
+
+# Experimental comparison scripts (do not upload)
+DWDMAgent/qwen_compare.py
+DWDMAgent/*compare*.py
+DWDMAgent/*qwen*.py
+
+# Local deployment units (contain environment-specific user/group)
+DWDMAgent/systemd/
+
+# OS noise
+.DS_Store
