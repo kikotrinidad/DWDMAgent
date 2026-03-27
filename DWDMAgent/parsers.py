@@ -13,6 +13,7 @@ Command → Parser mapping:
   RTRV-OCH          → parse_optical_channels()
 """
 
+import ipaddress
 import re
 import logging
 
@@ -78,6 +79,11 @@ def parse_map_network(response):
     for line in extract_data_lines(response):
         parts = [p.strip() for p in line.split(',', 2)]
         if len(parts) < 2:
+            continue
+        try:
+            ipaddress.ip_address(parts[0])
+        except ValueError:
+            logger.debug(f"Skipping non-topology line in MAP-NETWORK response: {line}")
             continue
         records.append({
             'ip_address': parts[0],
