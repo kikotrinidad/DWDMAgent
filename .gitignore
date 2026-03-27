@@ -27,6 +27,7 @@ DWDMAgent/sample_output/**
 
 # Docs are private for now
 *.md
+!/README.md
 
 # Experimental comparison scripts (do not upload)
 DWDMAgent/qwen_compare.py
